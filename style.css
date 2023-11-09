@@ -1,0 +1,183 @@
+/* Estilos básicos */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: #00A7E1;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.navbar-logo {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilos de los elementos de la barra de navegación */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.navbar-item {
+    padding: 10px 15px;
+    position: relative;
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Estilos para el submenú */
+.has-submenu .submenu {
+    display: none;
+    position: absolute;
+    padding: 0;
+    background-color: #00A7E1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0;
+    top: 100%; /* Asegura que el submenú se posicione justo debajo del item */
+}
+
+.submenu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.submenu a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.submenu a:hover {
+    background-color: #0090C1;
+}
+
+/* Estilos para la visibilidad del submenú al hacer hover */
+.navbar-item.has-submenu:hover .submenu {
+    display: block;
+}
+
+/* Estilos del botón de menú para dispositivos móviles */
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    height: 3px;
+    width: 25px;
+    margin: 5px 0;
+    background-color: #ffffff;
+}
+.login-icon {
+    font-size: 24px; /* o el tamaño que prefieras */
+    cursor: pointer;
+    color: #ffffff;
+    margin-left: 5vw; /* o el espaciado que prefieras */
+}
+/* Agregar clase para los elementos que no son submenú */
+.navbar-item:not(.has-submenu) a {
+    position: relative;
+    display: inline-block; /* Para que la transformación se aplique correctamente */
+    overflow: hidden;
+    transition: color 0.3s, transform 0.3s; /* Transición suave para color y transformación */
+  }
+  
+  /* Agregar pseudoelemento para la línea inferior */
+  .navbar-item:not(.has-submenu) a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* iniciar sin línea visible */
+    height: 2px; /* altura de la línea */
+    background-color: #fff; /* color de la línea, cambia según tu esquema de color */
+    transition: width 0.3s ease-in-out; /* efecto suave de izquierda a derecha */
+  }
+  
+  /* Efecto al pasar el mouse */
+  .navbar-item:not(.has-submenu) a:hover {
+    transform: scale(1.1); /* agranda el texto */
+    color: #fff; /* cambia el color del texto al pasar el mouse, opcional */
+  }
+  
+  .navbar-item:not(.has-submenu) a:hover::after {
+    width: 100%; /* la línea se expande a todo el ancho */
+  }
+  /* Estilos para el logotipo */
+.logo {
+    height: 10vh; /* o el tamaño que prefieras */
+    width: auto; /* mantiene la proporción del logotipo */
+  }
+  
+  /* Puedes querer ajustar también el enlace del logotipo si es necesario */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+
+/* Estilos responsivos */
+@media screen and (max-width: 843px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #00A7E1;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-item {
+        width: 100%; /* Los elementos del navbar toman todo el ancho en dispositivos móviles */
+    }
+
+    .navbar-item.has-submenu .submenu {
+        position: static; /* El submenú ya no es posicionado de manera absoluta */
+        box-shadow: none;
+    }
+
+    .navbar-item.has-submenu.active .submenu {
+        display: block; /* El submenú se muestra cuando el item correspondiente está activo */
+    }
+
+    .navbar-toggle {
+        display: block; /* El botón de alternar se muestra en dispositivos móviles */
+    }
+    .login-icon {
+        display: none; /* si deseas ocultar el ícono en dispositivos móviles */
+    }
+}
