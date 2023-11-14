@@ -11,8 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    align-items: center;
-    z-index: 1000; /* Z-index alto para asegurar que el navbar esté por encima del contenido del slider */
+    z-index: 1000;
     position: relative;
 }
 
@@ -149,7 +148,7 @@ body {
 /* Estilos para los sliders */
 .slider {
     position: relative;
-    max-width: 1200px; /* Ajusta esta medida al máximo ancho deseado para tu slider */
+    max-width: 90vw; /* Ajusta esta medida al máximo ancho deseado para tu slider */
     margin: 1rem auto; /* Centra el slider horizontalmente y añade un poco de margen arriba y abajo */
     box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Opcional: agrega sombra para destacar el slider */
   }
@@ -214,11 +213,10 @@ body {
   
   /* Estilos para la sección de información */
   .info-section {
-    max-width: 1200px; /* Ajusta al ancho del slider */
-    margin: 0 auto; /* Centrar en la página */
     display: flex;
     justify-content: space-around;
-    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
   }
   
   .info-column {
@@ -241,45 +239,38 @@ body {
     margin-bottom: 25px;
   }
   
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres tarjetas en una fila */
-    gap: 20px;
-  }
-  
-  .card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .card h3 {
-    margin-top: 0;
-    color: #333;
-  }
-  
-  .card p {
-    color: #666;
-  }
-  
   .btn {
-    background-color: #00A7E1;
-    color: white;
-    border: none;
-    border-radius: 4px;
     padding: 10px 20px;
-    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
     text-transform: uppercase;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+    text-decoration: none; /* Remueve el subrayado si es un <a> */
+    display: inline-block; /* Para aplicar dimensiones */
   }
   
-  .btn:hover {
-    background-color: #0090C1;
+  .btn-primary {
+    background-color: #00A7E1;
   }
   
+  .btn-secondary {
+    background-color: #005f73;
+  }
+  
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-primary:active,
+  .btn-secondary:active {
+    transform: translateY(-1px);
+  }
   
 
 @keyframes fade {
