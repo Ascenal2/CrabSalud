@@ -32,8 +32,8 @@ body {
 /* Estilos del logo */
 .logo {
     height: auto;
-    width: 100%; /* Ajusta el ancho según sea necesario */
-    max-height: 80px;
+    width: 80px; /* Ajusta el ancho según sea necesario */
+    height: 80px;
 }
 
 /* Estilos de los elementos de la barra de navegación */
@@ -148,9 +148,10 @@ body {
 /* Estilos para los sliders */
 .slider {
     position: relative;
-    max-width: 90vw; /* Ajusta esta medida al máximo ancho deseado para tu slider */
+    max-width: 55vw; /* Ajusta esta medida al máximo ancho deseado para tu slider */
     margin: 1rem auto; /* Centra el slider horizontalmente y añade un poco de margen arriba y abajo */
     box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Opcional: agrega sombra para destacar el slider */
+    min-height: 300px;
   }
   
   .image-container {
@@ -206,10 +207,10 @@ body {
 }/* Estilos para la sección debajo del slider */
 /* Contenedor para "Seguros" y "Reservar hora" */
 .info-wrapper {
-    max-width: 1200px; /* El mismo ancho máximo que el slider */
-    margin: 0 auto; /* Centrar el contenedor en la página */
-    padding: 20px 0; /* Añadir algo de relleno arriba y abajo, ajusta según sea necesario */
-  }
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 20px 0;
+}
   
   /* Estilos para la sección de información */
   .info-section {
@@ -281,11 +282,15 @@ body {
 
 /* Estilos responsivos para dispositivos móviles */
 @media screen and (max-width: 843px) {
-    
-    .navbar-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .navbar-container {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .logo-menu{
+    display: flex;
+  }
 
     .navbar-menu {
         display: none;
@@ -315,7 +320,7 @@ body {
         display: block; /* El botón de alternar se muestra en dispositivos móviles */
     }
     .login-icon {
-        display: none; /* si deseas ocultar el ícono en dispositivos móviles */
+
     }
     
     .info-section {
@@ -325,4 +330,23 @@ body {
       .info-column {
         margin: 10px 0; /* Ajusta el margen para dispositivos móviles */
       }
-}
+    }
+    @media screen and (max-width: 350px) {
+      .slide{
+        width: 100%;
+      }
+      .slider{
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .slide a{
+        width: 100%;
+      }
+      .image-container{
+        width: 100%;
+      }
+      .image-container img{
+        width: 100%;
+      }
+    }
