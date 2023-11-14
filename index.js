@@ -1,31 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.getElementById('mobile-menu');
   const navMenu = document.querySelector('.navbar-menu');
-  
-  // Toggle para el menú móvil
+  const subMenus = document.querySelectorAll('.navbar-item.has-submenu');
+
   menuToggle.addEventListener('click', function () {
     navMenu.classList.toggle('active');
   });
 
-  // Evento para submenús en móviles
-  const subMenuButtons = document.querySelectorAll('.navbar-item.has-submenu > a');
-
-  subMenuButtons.forEach(function (btn) {
-    btn.addEventListener('click', function (event) {
-      // Previene la navegación por defecto
-      event.preventDefault();
-      let subMenu = btn.nextElementSibling; // Selecciona el submenú correspondiente al botón
+  // Añadir oyentes de eventos para cada elemento de menú que tiene un submenú
+  subMenus.forEach(function (item) {
+    let submenu = item.querySelector('.submenu');
+    item.firstElementChild.addEventListener('click', function (event) {
+      event.preventDefault(); // Evita que el enlace navegue a '#'
       
-      // Verifica si el submenú ya está activo
-      if (subMenu.classList.contains('active')) {
-        subMenu.classList.remove('active');
+      // Si el submenú ya está abierto, ciérralo
+      if (submenu.style.display === 'block') {
+        submenu.style.display = 'none';
       } else {
-        // Cerrar todos los submenús abiertos primero
-        document.querySelectorAll('.navbar-item.has-submenu .submenu.active').forEach(function (openMenu) {
-          openMenu.classList.remove('active');
+        // Cierra todos los submenús abiertos
+        subMenus.forEach(function (subItem) {
+          subItem.querySelector('.submenu').style.display = 'none';
         });
-        // Activar el submenú actual
-        subMenu.classList.add('active');
+        // Abre el submenú correspondiente
+        submenu.style.display = 'block';
       }
     });
   });
