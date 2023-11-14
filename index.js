@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.getElementById('mobile-menu');
   const navMenu = document.querySelector('.navbar-menu');
   const navbar = document.querySelector('.navbar'); // Selecciona el elemento .navbar
+  const subMenus = document.querySelectorAll('.has-submenu');
 
     menuToggle.addEventListener('click', function () {
         navMenu.classList.toggle('active');
