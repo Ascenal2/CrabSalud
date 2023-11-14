@@ -6,17 +6,18 @@ body {
 
 /* Estilos de la barra de navegación */
 .navbar {
-    background-color: #00A7E1;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    z-index: 1000;
-    position: relative;
+  background-color: #00A7E1;
+  color: white;
+  display: flex;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 .navbar-container {
   display: flex;
-  width: 100%;
+  width: auto;
   align-items: center;
 }
 
@@ -270,7 +271,10 @@ body {
   .btn-secondary:active {
     transform: translateY(-1px);
   }
-  
+  .align-start {
+    align-items: start;
+}
+
 
 @keyframes fade {
     from { opacity: 0.4; }
@@ -282,9 +286,13 @@ body {
 @media screen and (max-width: 843px) {
   .navbar-container {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
+    align-items: start;
     justify-content: space-between;
   }
+  .navbar {
+    justify-content: space-between;
+}
   .logo-menu{
     display: flex;
     align-items: center;

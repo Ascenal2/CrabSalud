@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.getElementById('mobile-menu');
   const navMenu = document.querySelector('.navbar-menu');
-  const subMenus = document.querySelectorAll('.navbar-item.has-submenu');
+  const navbar = document.querySelector('.navbar'); // Selecciona el elemento .navbar
 
-  menuToggle.addEventListener('click', function () {
-    navMenu.classList.toggle('active');
-  });
+    menuToggle.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+        navbar.classList.toggle('align-start'); // Alternar la nueva clase aquí
+    });
 
   // Añadir oyentes de eventos para cada elemento de menú que tiene un submenú
   subMenus.forEach(function (item) {
