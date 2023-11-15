@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👨‍⚕️CrabSalud👩‍⚕️</title>
+<link rel="stylesheet" href="login.css">
+<link rel="icon" href="logo2.png" type="image/png" sizes="16x16">
+</head>
+<body>
+    <main class="login-container">
+        <section class="login-logo">
+            <a href="index.html"><img src="logo2.png" alt="Logo de CrabSalud"></a> <!-- Asegúrate de tener la ruta correcta al archivo del logo -->
+          </section>
+        <section class="login-form">
+          <h1>Iniciar Sesión</h1>
+          <form id="loginForm"Form action="loginForm.html" method="post"> <!-- Asegúrate de usar la URL correcta en action -->
+            <div class="input-group">
+                <label for="username">Correo Electrónico o RUT</label>
+                <input type="text" id="username" name="username" placeholder="Correo electrónico o RUT" required>
+              </div>
+              
+            <div class="input-group">
+              <label for="password">Contraseña</label>
+              <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+            <div class="login-links">
+              <a href="forgot-password.html">Olvidé mi contraseña</a> <!-- Asegúrate de enlazar al URL correcto para recuperar contraseña -->
+              <a href="register.html">Registrarse</a> <!-- Asegúrate de enlazar al URL correcto para registro -->
+            </div>
+          </form>
+        </section>
+      </main>
+      <script src="login.js"></script>
+</body>
