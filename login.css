@@ -81,4 +81,13 @@ body {
     max-width: 70%; /* Asegura que el logo sea responsive y no exceda el ancho del contenedor */
     height: auto; /* Mantiene la proporción del logo */
   }
-  
+  @media screen and (max-width: 480px) {
+    .login-container {
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      padding: 0 40px;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      height: 100vh;
+  }
+  }
