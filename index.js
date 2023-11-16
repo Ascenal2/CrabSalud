@@ -53,7 +53,7 @@ function showSlides() {
 
   // Restablecer el temporizador
   clearTimeout(timer);
-  timer = setTimeout(showSlides, 700000); // Cambiar cada 7 segundos
+  timer = setTimeout(showSlides, 7000); // Cambiar cada 7 segundos
 }
 
 function currentSlide(n) {

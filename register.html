@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👨‍⚕️CrabSalud👩‍⚕️ - Registro</title>
+    <link rel="stylesheet" href="login.css"> <!-- Se reutiliza el CSS del login -->
+    <link rel="icon" href="logo2.png" type="image/png" sizes="16x16">
+</head>
+<body>
+    <main class="login-container">
+        <section class="login-logo">
+            <a href="index.html"><img src="logo2.png" alt="Logo de CrabSalud"></a>
+        </section>
+        <section class="login-form">
+            <h1>Registro</h1>
+            <form id="registerForm" action="index.html" method="post">
+                <div class="input-group">
+                    <label for="fullname">Nombre Completo</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nombre Completo" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+                </div>
+                <div class="input-group">
+                    <label for="rut">Rut</label>
+                    <input type="text" id="rut" name="rut" placeholder="XXXXXXXX-X" required>
+                </div>
+                <div class="input-group">
+                    <label for="new-password">Contraseña</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="Contraseña" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirmar Contraseña</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar Contraseña" required>
+                </div>
+                <button type="submit">Registrarse</button>
+                <div class="login-links">
+                    <a href="login.html">Ya tengo una cuenta</a>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="register.js"></script>
+</body>
+</html>

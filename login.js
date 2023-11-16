@@ -7,7 +7,7 @@ function validarRut(rut) {
     let suma = 0;
     let factor = 2;
   
-    // Para cada dígito del cuerpo del RUT
+    // Para cada dígito del cuerpo del RUT  
     for (let i = cuerpo.length - 1; i >= 0; i--) {
       suma += factor * parseInt(cuerpo.charAt(i), 10);
       factor = (factor === 7) ? 2 : factor + 1;

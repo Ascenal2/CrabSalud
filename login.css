@@ -81,6 +81,43 @@ body {
     max-width: 70%; /* Asegura que el logo sea responsive y no exceda el ancho del contenedor */
     height: auto; /* Mantiene la proporción del logo */
   }
+  #message {
+    color: white;
+    background-color: #28a745; /* Color de fondo verde */
+    border: 1px solid #1e7e34; /* Borde verde más oscuro */
+    padding: 0.75rem 1.25rem; /* Padding interno */
+    margin-top: 1rem; /* Espacio arriba */
+    position: fixed; /* Fijo en la parte superior */
+    top: -50px; /* Inicialmente fuera de la vista */
+    left: 0;
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box;
+    text-align: center; /* Texto centrado */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 0.25rem; /* Bordes redondeados */
+    z-index: 1050; /* Asegurarse de que está por encima de otros elementos */
+    display: none; /* Inicialmente oculto */
+}
+
+#message.visible {
+    display: block; /* Se muestra para empezar la animación */
+    animation: slideDown 1s ease; /* Aplica la animación */
+    top: 42px;
+}
+
+@keyframes slideDown {
+    0% {
+        top: -50px; /* Inicia fuera de la vista */
+    }
+    100% {
+        top: 42px; /* La posición final deseada */
+    }
+}
+
+
+
   @media screen and (max-width: 480px) {
     .login-container {
       border-radius: 20px;
