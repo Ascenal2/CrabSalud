@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  main{
+    margin-top: 50px;
+  }
+  a, a:visited { /* Estilos para enlaces no visitados y visitados */
+    color: inherit; /* Hereda el color del elemento padre */
+    text-decoration: none; /* Elimina el subrayado */
+  }
+  
+  a:hover, a:active { /* Estilos para enlaces al pasar el ratón y en clic */
+    color: inherit; /* Mantiene el color al pasar el ratón o hacer clic */
+    text-decoration: none; /* Elimina el subrayado al pasar el ratón */
+  }
+  .contenedor-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .servicio {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s, transform 0.3s; /* Agrega transición suave para sombra y transformación */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .servicio:hover {
+    transform: translateY(-5px); /* Eleva el servicio al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra más pronunciada al pasar el ratón */
+  }
+  
+  .servicio img {
+    width: 70px;
+    height: auto;
+  }
+  
+  .servicio h3 {
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .servicio p {
+    color: #666;
+    font-size: 14px;
+  }
+  

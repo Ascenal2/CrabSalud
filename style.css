@@ -94,6 +94,41 @@ body {
     transform: scale(1.1);
 }
 
+.login-icon-link {
+  position: relative; /* Contexto de posicionamiento para el submenú */
+  display: inline-block; /* Para permitir dimensionamiento */
+}
+
+.login-submenu {
+  display: none;
+  position: absolute;
+  right: 0; /* Ajusta según necesidad */
+  background-color: #00A7E1;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1001; /* Asegura que esté por encima de otros elementos */
+}
+
+.login-submenu li {
+  list-style: none;
+}
+
+.login-submenu a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.login-submenu a:hover {
+  background-color: #0090C1;
+}
+
+.login-icon-link:hover .login-submenu {
+  display: block;
+}
+
 /* Estilos para el submenú */
 .has-submenu .submenu {
     display: none;
@@ -220,14 +255,19 @@ body {
   }
   
   .info-column {
-    flex: 1; /* Ocupa espacio equitativo */
-    margin: 0 10px; /* Añade un poco de espacio entre las columnas */
+    display: flex;
+    flex: 1;
+    margin: 0 10px;
     padding: 20px;
-    background-color: #ffffff; /* Fondo blanco para la legibilidad */
+    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
-    text-align: center; /* Centrado de texto */
-  }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: space-between;
+}
   
   .info-column h2 {
     color: #333;
@@ -324,9 +364,6 @@ body {
 
     .navbar-toggle {
         display: block; /* El botón de alternar se muestra en dispositivos móviles */
-    }
-    .login-icon {
-
     }
     
     .info-section {

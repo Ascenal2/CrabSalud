@@ -30,25 +30,40 @@ function validarRut(rut) {
   
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('loginForm');
-    const input = document.getElementById('username');
-    
+    const inputUsername = document.getElementById('username');
+    const inputPassword = document.getElementById('password');
+  
     form.addEventListener('submit', function (e) {
-      const value = input.value;
-      const isEmail = value.includes('@') && value.includes('.'); // Una comprobación básica de email
-      const isRut = validarRut(value);
+      e.preventDefault(); // Detén el envío del formulario
+  
+      const username = inputUsername.value;
+      const password = inputPassword.value;
+      const isEmail = username.includes('@') && username.includes('.');
+      const isRut = validarRut(username);
   
       if (!isEmail && !isRut) {
-        e.preventDefault(); // Detén el envío del formulario
-        input.setCustomValidity('Por favor, ingresa un correo electrónico o RUT válido.');
-        input.reportValidity(); // Muestra el mensaje de error
+        inputUsername.setCustomValidity('Por favor, ingresa un correo electrónico o RUT válido.');
+        inputUsername.reportValidity();
+        return;
+      }
+  
+      // Comprueba las credenciales y redirige según corresponda
+      if ((isEmail || isRut) && password === 'paciente') {
+        window.location.href = 'pacienteLogin.html'; // Redirige a la página de pacientes
+      } else if ((isEmail || isRut) && password === 'admin') {
+        window.location.href = '#adminLogin.html'; // Redirige a la página de administradores
       } else {
-        input.setCustomValidity(''); // Limpia el mensaje de error si todo está bien
+        inputPassword.setCustomValidity('Contraseña incorrecta.');
+        inputPassword.reportValidity();
       }
     });
   
-    input.addEventListener('input', function () {
-      // Esto es necesario para restablecer el estado de validación en cada entrada del usuario
-      input.setCustomValidity('');
+    // Restablece la validación en cada entrada del usuario
+    inputUsername.addEventListener('input', function () {
+      inputUsername.setCustomValidity('');
+    });
+    inputPassword.addEventListener('input', function () {
+      inputPassword.setCustomValidity('');
     });
   });
   
