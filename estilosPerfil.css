@@ -18,9 +18,11 @@ body {
   }
   .contenedor-servicios {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta para llenar el espacio disponible con hasta 3 columnas */
     gap: 20px;
     padding: 20px;
+    max-width: 660px; /* Ancho máximo para 3 columnas (200px * 3 + 20px * 2 [gap]) */
+    margin: 0 auto; /* Centrar el contenedor */
   }
   
   .servicio {
@@ -31,6 +33,7 @@ body {
     text-align: center;
     padding: 20px;
     transition: transform 0.3s ease;
+    min-height: 00px;
   }
   
   .servicio:hover {
@@ -39,8 +42,9 @@ body {
   }
   
   .servicio img {
-    width: 70px;
+    width: 90px;
     height: auto;
+    border-radius: 50%;
   }
   
   .servicio h3 {
@@ -53,3 +57,20 @@ body {
     font-size: 14px;
   }
   
+@media (min-width: 660px) { /* Si el ancho es mayor a 660px, entonces establecer exactamente 3 columnas */
+    .contenedor-servicios {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    }
+  }
+  
+  @media (min-width: 460px) and (max-width: 659px) { /* Ancho intermedio para 2 columnas */
+    .contenedor-servicios {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+  }
+  
+  @media (max-width: 459px) { /* Ancho pequeño para 1 columna */
+    .contenedor-servicios {
+      grid-template-columns: 1fr; /* 1 columna */
+    }
+  }
