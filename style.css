@@ -314,6 +314,29 @@ body {
   .align-start {
     align-items: start;
 }
+#readPageButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Animación suave para el efecto de escalado */
+}
+#readPageButton:hover {
+  transform: scale(1.2); /* Aumenta el tamaño del botón en un 10% */
+}
+
+
+
+#readPageButton img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
 
 
 @keyframes fade {
@@ -324,6 +347,9 @@ body {
 
 /* Estilos responsivos para dispositivos móviles */
 @media screen and (max-width: 843px) {
+  #readPageButton img{
+    width: 80px;
+  }
   .navbar-container {
     display: flex;
     flex-direction: column;
@@ -375,6 +401,9 @@ body {
       }
     }
     @media screen and (max-width: 550px) {
+      #readPageButton img{
+        width: 60px;
+      }
       .slide{
         width: 100%;
       }
