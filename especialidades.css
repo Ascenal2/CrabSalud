@@ -1,0 +1,76 @@
+/* Estilos del Contenedor Principal */
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de la Sección Broncopulmonar */
+.departamento-broncopulmonar {
+    background-color: #e6f7ff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border-left: 5px solid #009fd4;
+}
+
+.departamento-broncopulmonar h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+
+.departamento-broncopulmonar h3 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.departamento-broncopulmonar h4 {
+    font-size: 20px;
+    margin-top: 15px;
+    color: #333;
+    border-bottom: 1px solid #009fd4;
+    padding-bottom: 5px;
+}
+
+.departamento-broncopulmonar p {
+    font-size: 16px;
+    color: #666;
+}
+
+.equipo-medico ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.equipo-medico li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Estilos de la lista de Patologías */
+.departamento-broncopulmonar ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    margin-top: 10px;
+}
+
+.departamento-broncopulmonar ul li {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .departamento-broncopulmonar ul {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+    }
+}

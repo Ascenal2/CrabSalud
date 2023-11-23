@@ -47,13 +47,13 @@ body {
     padding: 10px 15px;
 }
 
-.navbar-item a {
+.navbar-menu > .navbar-item > a{
     text-decoration: none;
     color: white;
     display: block;
 }
 /* Agregar clase para los elementos que no son submenú */
-.navbar-item:not(.has-submenu) a {
+.navbar-menu > .navbar-item > a {
     position: relative;
     display: inline-block; /* Para que la transformación se aplique correctamente */
     overflow: hidden;
@@ -61,7 +61,7 @@ body {
   }
   
   /* Agregar pseudoelemento para la línea inferior */
-  .navbar-item:not(.has-submenu) a::after {
+  .navbar-menu > .navbar-item > a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -72,16 +72,15 @@ body {
     transition: width 0.3s ease-in-out; /* efecto suave de izquierda a derecha */
   }
   
-  /* Efecto al pasar el mouse */
-  .navbar-item:not(.has-submenu) a:hover {
+  /* Efecto al pasar el mouse solo para los elementos de nivel superior */
+  .navbar-menu > .navbar-item > a:hover {
     transform: scale(1.1); /* agranda el texto */
     color: #fff; /* cambia el color del texto al pasar el mouse, opcional */
   }
   
-  .navbar-item:not(.has-submenu) a:hover::after {
+  .navbar-menu > .navbar-item > a:hover::after {
     width: 100%; /* la línea se expande a todo el ancho */
   }
-
 /* Estilos para el ícono de login y animación al hacer hover */
 .login-icon {
     font-size: 24px;
@@ -161,9 +160,7 @@ body {
 .navbar-item.has-submenu {
     position: relative; /* Esto crea un contexto de posicionamiento para el submenú */
 }
-.navbar-item.has-submenu:hover .submenu {
-    display: block;
-}
+
 
 /* Estilos del botón de menú para dispositivos móviles */
 .navbar-toggle {
@@ -336,6 +333,97 @@ body {
   height: auto;
   border-radius: 50%;
 }
+/* Nosotros.html*/
+/* Estilos específicos para la sección "Nosotros" */
+.banner-nosotros {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; /* Alinea los elementos al principio de la columna */
+  padding: 50px;
+  background-color: #ffffff; /* Un color de fondo claro */
+  color: #333; /* Color del texto */
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* Asegúrate de importar la fuente 'Open Sans' en tu archivo HTML o CSS */
+
+.banner-nosotros .info-nosotros {
+  flex: 1; /* Asume igual espacio en el contenedor */
+  padding: 2em; /* Espacio interno */
+  background: #fff; /* Fondo blanco para las tarjetas */
+  margin: 1em; /* Margen externo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.banner-nosotros .info-nosotros h3 {
+  color: #005377; /* Color del título */
+  margin-bottom: 0.5em;
+}
+
+.banner-nosotros .info-nosotros h4 {
+  margin-bottom: 1em;
+}
+
+.banner-nosotros .info-nosotros p {
+  margin-bottom: 1em;
+  text-align: left; /* Alinear el texto a la izquierda */
+  text-align: justify;
+}
+.info-nosotros{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 500px;
+  
+}
+
+.banner-nosotros .info-nosotros button {
+  background-color: #007EA7; /* Color del botón */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold; /* Texto en negrita */
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 1em; /* Espacio por encima del botón */
+}
+
+.banner-nosotros .info-nosotros button:hover {
+  background-color: #005377; /* Color del botón al pasar el cursor */
+  transform: translateY(-2px); /* Elevación sutil al pasar el cursor */
+}
+.mission-content {
+  max-height: 109px; /* Altura máxima inicial */
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  overflow-wrap: break-word;  
+}
+
+.mission-content.expanded {
+  max-height: 1000px; /* Ajusta esto según el contenido */
+}
+.img-misiones{
+  border-radius: 50%;
+  width: 150px;
+  height: auto;
+}
+
+
+/* Añade los media queries para la responsividad si es necesario */
+
+@media (max-width: 768px) {
+  .banner-nosotros {
+    flex-direction: column;
+  }
+
+  .banner-nosotros .info-nosotros {
+    margin: 0 0 2em 0; /* Solo margen inferior */
+  }
+}
+
+
 
 
 

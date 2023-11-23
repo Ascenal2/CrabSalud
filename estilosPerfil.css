@@ -33,7 +33,9 @@ body {
     text-align: center;
     padding: 20px;
     transition: transform 0.3s ease;
-    min-height: 00px;
+    min-height: 220px;
+    
+    
   }
   
   .servicio:hover {
@@ -55,6 +57,14 @@ body {
   .servicio p {
     color: #666;
     font-size: 14px;
+  }
+  .especialidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+
   }
   
 @media (min-width: 660px) { /* Si el ancho es mayor a 660px, entonces establecer exactamente 3 columnas */

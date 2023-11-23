@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.querySelector('.navbar'); // Selecciona el elemento .navbar
   const subMenus = document.querySelectorAll('.has-submenu');
 
-    menuToggle.addEventListener('click', function () {
-        navMenu.classList.toggle('active');
-        navbar.classList.toggle('align-start'); // Alternar la nueva clase aquí
-    });
+  menuToggle.addEventListener('click', function () {
+    navMenu.classList.toggle('active');
+    navbar.classList.toggle('align-start'); // Alternar la nueva clase aquí
+  });
 
   // Añadir oyentes de eventos para cada elemento de menú que tiene un submenú
   subMenus.forEach(function (item) {
@@ -27,6 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
         submenu.style.display = 'block';
       }
     });
+  });
+
+  // Evento para cerrar los submenús al hacer clic fuera
+  document.addEventListener('click', function (e) {
+    // Verifica si el clic fue fuera de los submenús
+    const isClickInsideMenu = e.target.closest('.navbar-item.has-submenu');
+    if (!isClickInsideMenu) {
+      // Cierra todos los submenús
+      subMenus.forEach(function (item) {
+        let submenu = item.querySelector('.submenu');
+        submenu.style.display = 'none';
+      });
+    }
   });
 
   // Inicialización del slider
@@ -60,3 +73,17 @@ function currentSlide(n) {
   slideIndex = n - 1; // Ajustar para el índice basado en cero
   showSlides(); // Mostrar el slide seleccionado
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('toggleButton');
+  const missionContent = document.getElementById('missionContent');
+
+  toggleButton.addEventListener('click', () => {
+    missionContent.classList.toggle('expanded');
+    
+    if (toggleButton.textContent === "Saber más") {
+      toggleButton.textContent = "Leer menos";
+    } else {
+      toggleButton.textContent = "Saber más";
+    }
+  });
+});
