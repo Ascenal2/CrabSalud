@@ -50,8 +50,8 @@ function validarRut(rut) {
       // Comprueba las credenciales y redirige según corresponda
       if ((isEmail || isRut) && password === 'paciente') {
         window.location.href = 'pacienteLogin.html'; // Redirige a la página de pacientes
-      } else if ((isEmail || isRut) && password === 'admin') {
-        window.location.href = '#adminLogin.html'; // Redirige a la página de administradores
+      } else if ((isEmail || isRut) && password === 'adminTecnico') {
+        window.location.href = 'adminTecnico.html'; // Redirige a la página de administradores
       } else {
         inputPassword.setCustomValidity('Contraseña incorrecta.');
         inputPassword.reportValidity();

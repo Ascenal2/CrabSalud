@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración Técnica</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Estado del Servidor</h1>
+    </header>
+
+    <div class="content">
+        <section class="server-status">
+            <h2>Estado de Datacenters</h2>
+            <div class="servers-container">
+                <div class="servers">
+                    <div class="server">
+                        <h3>Servidor Principal</h3>
+                        <p><strong>Hostname:</strong> CrabSalud</p>
+                        <p><strong>Status:</strong> <span class="status online">ONLINE</span></p>
+                        <p><strong>IP:</strong> 192.168.0.24</p>
+                    </div>
+            
+                    <div class="server">
+                        <h3>Servidor de Respaldo</h3>
+                        <p><strong>Hostname:</strong> CrabSalud Respaldo</p>
+                        <p><strong>Status:</strong> <span class="status offline">OFFLINE</span></p>
+                        <p><strong>IP:</strong> 192.168.0.25</p>
+                    </div>
+                </div>
+                <div class="server-toggle">
+                    <button class="toggle-status">Cambiar Estados</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>Última actualización: <time>15:32:35</time></p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
