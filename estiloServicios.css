@@ -1,0 +1,44 @@
+.servicios-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (max-width: 1200px) { /* Ajusta a 3 columnas para pantallas más pequeñas */
+    .servicios-grid {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 900px) { /* Ajusta a 2 columnas para pantallas aún más pequeñas */
+    .servicios-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 600px) { /* Ajusta a 1 columna para pantallas muy pequeñas, como móviles */
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.servicio-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.servicio-item img {
+    width: 100px; /* Ajusta esto según el tamaño de tus iconos */
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
