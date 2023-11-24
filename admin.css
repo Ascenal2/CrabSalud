@@ -23,6 +23,7 @@ header {
     padding: 10px 0;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    display: ;
 }
 
 .server-status {
@@ -127,6 +128,21 @@ footer {
     position: relative; /* O 'absolute' si se desea que esté siempre en la parte inferior */
     bottom: 0;
     flex-shrink: 0; /* Esto asegura que el footer no se encoja */
+}
+.exit-button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px; /* Ajusta el margen como necesites */
+    background-color: #dc3545; /* Color de fondo rojo */
+    color: white; /* Texto en blanco */
+    text-decoration: none; /* Quitar el subrayado de los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.2s; /* Transición suave del color de fondo */
+}
+
+.exit-button:hover {
+    background-color: #bd2130; /* Color de fondo más oscuro al pasar el ratón */
 }
 
 footer p {
