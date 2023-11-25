@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Cita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="progress-container">
+            <a href="consultaGeneral.html">
+                <div class="progress-step" data-step="1">1</div>
+            </a>
+            <a href="opcionTelemedicina.html">
+                <div class="progress-step" data-step="2">2</div>
+            </a>
+            <a href="#">
+                <div class="progress-step active" data-step="3">3</div>
+            </a>
+        </div>
+        <div class="confirmation-container">
+            <h1>Cita Agendada con Éxito</h1>
+            <p id="especialidad"></p>
+            <p id="medico"></p>
+            <p id="fecha"></p>
+            <p id="hora"></p>
+            <p>Link Generado:</p>
+            <a href="#" id="link"></a>
+            <a href="pacienteLogin.html" class="button">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <script src="horaAgendadaTelemedicina.js"></script>
+</body>
+</html>
