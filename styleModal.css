@@ -1,0 +1,17 @@
+/* styleModal.css */
+.hidden-modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#confirm-modals {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    background: #0077b6; /* Un tono de azul que combina con el esquema de colores */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+}

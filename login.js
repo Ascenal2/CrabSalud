@@ -52,7 +52,15 @@ function validarRut(rut) {
         window.location.href = 'pacienteLogin.html'; // Redirige a la página de pacientes
       } else if ((isEmail || isRut) && password === 'adminTecnico') {
         window.location.href = 'adminTecnico.html'; // Redirige a la página de administradores
-      } else {
+      }
+      else if((isEmail || isRut) && password === 'medico'){
+        window.location.href = 'medico.html'; // Redirige a la página de médicos
+      }
+      else if((isEmail || isRut) && password === 'secretaria'){
+        window.location.href = 'secretaria.html'; // Redirige a la página de administradores
+
+      } 
+      else {
         inputPassword.setCustomValidity('Contraseña incorrecta.');
         inputPassword.reportValidity();
       }
