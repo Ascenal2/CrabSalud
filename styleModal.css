@@ -1,17 +1,46 @@
-/* styleModal.css */
 .hidden-modal {
     display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
 }
-#confirm-modals {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    background: #0077b6; /* Un tono de azul que combina con el esquema de colores */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+.modal {
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
     z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077b6;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #005f73;
+}
+
+.btn:disabled {
+    background-color: #cccccc;
+    cursor: default;
 }

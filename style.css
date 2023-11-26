@@ -579,6 +579,96 @@ body {
 .confirmation-container a.button:hover {
   background-color: #45a049; /* Color más oscuro al pasar el ratón por encima */
 }
+/* Chatbox CSS */
+.chatbox {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: bottom 0.3s;
+  z-index: 100;
+}
+
+.chatbox-header {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chatbox-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.chat-messages {
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#chat-input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+#send-message {
+  background-color: #005f73;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#minimize-chat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Estilo cuando el chatbox está minimizado */
+.minimized .chatbox-content {
+  display: none;
+}
+
+.minimized .chatbox {
+  bottom: -210px; /* Ajusta este valor al tamaño de tu chatbox-header */
+}
+.user-message {
+  background-color: #007bff; /* Color de fondo azul */
+  color: white; /* Color del texto blanco */
+  text-align: right; /* Alinea el texto a la derecha */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 5px 10px; /* Espaciado interior */
+  margin: 10px 0; /* Espaciado exterior */
+}
+
+/* Estilo para los mensajes del bot */
+.help-message {
+  background-color: #800080; /* Color de fondo morado */
+  color: white; /* Color del texto blanco */
+  text-align: left; /* Alinea el texto a la izquierda */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 5px 10px; /* Espaciado interior */
+  margin: 10px 0; /* Espaciado exterior */
+}
 /* Añade los media queries para la responsividad si es necesario */
 
 @media (max-width: 768px) {

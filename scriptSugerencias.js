@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
         var numCaracteres = textarea.value.length;
         var contador = document.getElementById('contador-caracteres');
         
-        if (numCaracteres > 120) {
+        if (numCaracteres > 100) {
             // Limita el texto a los primeros 60 caracteres
-            textarea.value = textarea.value.substring(0, 120);
-            numCaracteres = 120;
+            textarea.value = textarea.value.substring(0, 100);
+            numCaracteres = 100;
         }
 
-        contador.textContent = numCaracteres + '/60 caracteres';
+        contador.textContent = numCaracteres + '/100 caracteres';
     }
 
     // Evento para manejar la entrada en el área de texto

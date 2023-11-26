@@ -49,11 +49,16 @@
             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
         </form>
     </main>
-    <div id="confirm-modals" class="hidden-modal">
-        <p>¿Deseas guardar los cambios?</p>
-        <button id="confirm-btn" disabled>Confirmar</button>
-        <button id="close-btn">Cerrar</button>
-    </div>
+    <div id="confirm-modals" class="modal hidden-modal">
+      <div class="modal-content">
+          <p>¿Deseas guardar los cambios?</p>
+          <div class="modal-buttons">
+              <button id="confirm-btn" class="btn" disabled>Confirmar</button>
+              <button id="close-btn" class="btn">Cerrar</button>
+          </div>
+      </div>
+  </div>
+  
     <script src="modificarPerfil.js"></script>
 </body>
 </html>

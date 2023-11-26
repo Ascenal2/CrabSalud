@@ -94,9 +94,17 @@
             </a>
         </div>
         
-<button id="readPageButton" aria-label="Leer página" style="position: fixed; bottom: 50px; right: 20px; z-index: 100;">
-    <img src="atencionAlCliente.jfif" alt="Icono de sonido">
-  </button>
+        <div id="chatbox" class="chatbox">
+            <div class="chatbox-header">
+                <span>Chat de Ayuda</span>
+                <button id="minimize-chat">_</button>
+            </div>
+            <div class="chatbox-content">
+                <div id="chat-messages" class="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Escribe tu mensaje aquí...">
+                <button id="send-message">Enviar</button>
+            </div>
+          </div>
     </main>
     <script src="index.js"></script>
 </body>

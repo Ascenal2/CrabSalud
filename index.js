@@ -3,6 +3,38 @@ document.addEventListener('DOMContentLoaded', function () {
   const navMenu = document.querySelector('.navbar-menu');
   const navbar = document.querySelector('.navbar'); // Selecciona el elemento .navbar
   const subMenus = document.querySelectorAll('.has-submenu');
+  const chatbox = document.getElementById('chatbox');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInput = document.getElementById('chat-input');
+  const sendMessageButton = document.getElementById('send-message');
+  const minimizeButton = document.getElementById('minimize-chat');
+  const chatContent = document.querySelector('.chatbox-content');
+  
+  // Función para añadir un mensaje al chat
+  function addMessage(author, text) {
+      const messageElement = document.createElement('p');
+      messageElement.textContent = text;
+      messageElement.classList.add(author === 'user' ? 'user-message' : 'help-message');
+      chatMessages.appendChild(messageElement);
+  }
+
+  // Evento para enviar mensaje
+  sendMessageButton.addEventListener('click', () => {
+      const message = chatInput.value.trim();
+      if (message) {
+          addMessage('user', message); // Agrega mensaje del usuario
+          chatInput.value = '';
+          setTimeout(() => { // Simula una respuesta automática
+              addMessage('help', 'Gracias por tu mensaje. ¿En qué puedo ayudarte?');
+          }, 1000);
+      }
+  });
+
+  // Evento para minimizar/maximizar el chatbox
+  minimizeButton.addEventListener('click', () => {
+      chatContent.style.display = chatContent.style.display === 'none' ? 'flex' : 'none';
+      chatbox.classList.toggle('minimized');
+  });
 
   menuToggle.addEventListener('click', function () {
     navMenu.classList.toggle('active');
