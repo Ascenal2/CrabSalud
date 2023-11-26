@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5C85D6;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: block; /* Centrar el botón */
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #3D6B99;
+}
+
+.faq-item h3 {
+    margin-top: 20px;
+}
+/* ...otros estilos... */
+
+textarea {
+    resize: none; /* Evita que se pueda redimensionar el área de texto */
+    /* Otros estilos para textarea */
+}
+
+#contador-palabras {
+    color: #666;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* ...otros estilos... */

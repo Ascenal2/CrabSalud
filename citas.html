@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Citas Anteriores</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleCitas.css">
+</head>
+<body>
+    <nav class="navbar">
+      
+        <div class="navbar-container">
+          
+          <div class="logo-menu">
+            <a href="pacienteLogin.html" class="navbar-logo">
+              <img src="logo2.png" alt="Logo de CrabSalud" class="logo">
+            </a>
+            <div id="mobile-menu" class="navbar-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+          </div>
+          <ul class="navbar-menu">
+            <li class="navbar-item"><a href="nosotrosLogin.html">Nosotros</a></li>
+            <li class="navbar-item">
+            <a href="serviciosLogin.html">Servicios</a>
+          </li>
+          <li class="navbar-item"><a href="segurosPlanes.html">Seguros y Planes</a></li>
+          <li class="navbar-item"><a href="especialidades.html">Especialidades</a></li>
+        </ul>
+      </div>
+      <a href="perfil.html"><img src="persona.png" alt="Icono de persona" class="login-icon" width="50px" style="border-radius: 35px;" ></a>
+    </nav>
+    <main>
+        <div class="container">
+            <h1>Citas Anteriores</h1>
+            <table id="tablaCitas">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Motivo</th>
+                        <th>Notas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí irán las filas generadas dinámicamente -->
+                    <tr>
+                        <td>10/01/2023</td>
+                        <td>10:00 AM</td>
+                        <td>Consulta de rutina</td>
+                        <td>Control de presión arterial</td>
+                    </tr>
+                    <!-- Más filas -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="scriptCitas.js"></script>
+</body>
+</html>
