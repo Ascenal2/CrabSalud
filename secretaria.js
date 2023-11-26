@@ -78,6 +78,17 @@ function actualizarTabla() {
         });
     });
 }
+const backButton = document.createElement('button');
+backButton.textContent = 'Volver';
+backButton.classList.add('btn'); // Agrega la clase CSS 'btn' para darle estilo
+
+// Agrega un evento clic al botón para redireccionar al índice
+backButton.addEventListener('click', function () {
+  window.location.href = 'index.html'; // Cambia 'index.html' por la URL correcta de tu página de inicio
+});
+
+// Agrega el botón al cuerpo del documento
+document.body.appendChild(backButton);
 
 // Evento para cargar la tabla al iniciar
 document.addEventListener('DOMContentLoaded', actualizarTabla);
