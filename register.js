@@ -5,6 +5,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmPasswordInput = document.getElementById('confirm-password');
     const rutInput = document.getElementById('rut');
 
+    // Validar la contraseña
+    function validarContrasena(contrasena) {
+        const longitudValida = contrasena.length >= 8;
+        const tieneMayuscula = /[A-Z]/.test(contrasena);
+        const tieneMinuscula = /[a-z]/.test(contrasena);
+        const tieneNumero = /[0-9]/.test(contrasena);
+        const tieneSimbolo = /[\W_]/.test(contrasena); // \W es cualquier carácter no alfanumérico, y _ es el guion bajo
+
+        return longitudValida && tieneMayuscula && tieneMinuscula && tieneNumero && tieneSimbolo;
+    }
+
     form.addEventListener('submit', function (e) {
         e.preventDefault(); // Evita el envío predeterminado del formulario
 
@@ -31,6 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
             rutInput.setCustomValidity('');
         }
 
+        // Validar que la contraseña cumpla con los requisitos
+        if (!validarContrasena(password)) {
+            passwordInput.setCustomValidity('La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y símbolos.');
+            isValid = false;
+        } else {
+            passwordInput.setCustomValidity('');
+        }
+
         // Validar que las contraseñas coincidan
         if (password !== confirmPassword) {
             confirmPasswordInput.setCustomValidity('Las contraseñas no coinciden.');
@@ -44,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             emailInput.reportValidity();
             rutInput.reportValidity();
+            passwordInput.reportValidity();
             confirmPasswordInput.reportValidity();
         }
     });
@@ -54,6 +74,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     rutInput.addEventListener('input', function () {
         rutInput.setCustomValidity('');
+    });
+    passwordInput.addEventListener('input', function () {
+        passwordInput.setCustomValidity('');
     });
     confirmPasswordInput.addEventListener('input', function () {
         confirmPasswordInput.setCustomValidity('');
@@ -69,13 +92,11 @@ function validarRut(rut) {
     let suma = 0;
     let factor = 2;
   
-    // Para cada dígito del cuerpo del RUT
     for (let i = cuerpo.length - 1; i >= 0; i--) {
       suma += factor * parseInt(cuerpo.charAt(i), 10);
       factor = (factor === 7) ? 2 : factor + 1;
     }
   
-    // Calcular el 11 - (suma % 11)
     let dvEsperado = 11 - (suma % 11);
     if (dvEsperado === 10) {
       dvEsperado = 'K';
@@ -85,6 +106,5 @@ function validarRut(rut) {
       dvEsperado = dvEsperado.toString();
     }
   
-    // Comparamos el dígito verificador
     return dv === dvEsperado;
 }
