@@ -573,7 +573,7 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   margin-top: 20px;
-  transition: background-color 0.3s;
+  transition: background-color 0x.3s;
 }
 
 .confirmation-container a.button:hover {
@@ -607,7 +607,7 @@ body {
 }
 
 .chatbox-content {
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 10px;
 }

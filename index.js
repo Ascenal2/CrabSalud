@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const sendMessageButton = document.getElementById('send-message');
   const minimizeButton = document.getElementById('minimize-chat');
   const chatContent = document.querySelector('.chatbox-content');
-  
+  chatContent.style.display = 'none'; // Asegurar que el chat esté cerrado inicialmente
+  minimizeButton.textContent = '+'; // Cambiar texto a '+'
+
   // Función para añadir un mensaje al chat
   function addMessage(author, text) {
       const messageElement = document.createElement('p');
@@ -32,9 +34,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Evento para minimizar/maximizar el chatbox
   minimizeButton.addEventListener('click', () => {
-      chatContent.style.display = chatContent.style.display === 'none' ? 'flex' : 'none';
-      chatbox.classList.toggle('minimized');
-  });
+    // Verifica si el chat está abierto o cerrado antes del clic
+    const isChatOpen = chatContent.style.display === 'flex';
+
+    // Cambia el estado de visibilidad del chat
+    chatContent.style.display = isChatOpen ? 'none' : 'flex';
+
+    // Cambia el texto del botón según el estado del chat
+    minimizeButton.textContent = isChatOpen ? '+' : '-';
+
+    // Cambia la clase del chatbox para manejar otros estilos si es necesario
+    chatbox.classList.toggle('minimized');
+});
 
   menuToggle.addEventListener('click', function () {
     navMenu.classList.toggle('active');
