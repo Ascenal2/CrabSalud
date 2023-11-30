@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const rutInput = document.getElementById('rut');
 
     form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Evita el envío predeterminado del formulario
+
         let isValid = true;
         const email = emailInput.value;
         const password = passwordInput.value;
@@ -37,14 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
             confirmPasswordInput.setCustomValidity('');
         }
 
-        // Detener el envío del formulario si hay errores
-        if (!isValid) {
-            e.preventDefault();
+        if (isValid) {
+            window.location.href = 'index.html'; // Redirige a index.html
+        } else {
             emailInput.reportValidity();
             rutInput.reportValidity();
             confirmPasswordInput.reportValidity();
         }
-        console.log(rut);
     });
 
     // Limpiar el mensaje de validación en cada entrada del usuario
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         confirmPasswordInput.setCustomValidity('');
     });
 });
+
 function validarRut(rut) {
     let [cuerpo, dv] = rut.split('-');
     if (!cuerpo || dv === undefined || cuerpo.length < 2) return false; // Rut demasiado corto o sin DV
@@ -85,4 +87,4 @@ function validarRut(rut) {
   
     // Comparamos el dígito verificador
     return dv === dvEsperado;
-  }
+}
